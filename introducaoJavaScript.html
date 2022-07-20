@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       <script>
+        var x = 4;
+        var y = 5;
+        var total= x + y;
+        document.write(" O Resultado da soma de " + x  + " com " + y + " é igual a " + total);
+
+        function somar(a, b){
+            return a + b;
+        }
+        document.write("<br> O resultado da soma de " + x + " com " + y + " pela função somar é " + somar(x, y));
+
+        document.write("<br>Laço de repetição FOR: ");
+        for(var i = 0; i < 10; i++){
+            document.write(i + " ");
+        }
+
+        document.write("<br> laço de repetição WHILE: ");
+        i = 0;
+        while(i < 10){
+            document.write(i + " ");
+            i++;
+        }
+    </script>
+    <script>
+        function trocarTexto(){
+            document.getElementById("meuParagrafo").innerHTML = "Novo texto =D";
+        }
+    </script>
+    <p id="meuParagrafo">Este é o texto original</p>
+    <input type="button" value="Trocar texto de paragrafo" onclick="trocarTexto();">
+
+    <script>
+        function somarCampos(){
+           var campoX = document.getElementById("campoX").value;
+           var campoY = document.getElementById("campoY").value;
+
+            //campoX =  parseInt(campoX);
+           // campoY =  parseInt(campoY);
+          //  var campoResultado = somar(campoX, campoY);  (Usando a função somar!)
+          var campoResultado = parseInt(campoX) + parseInt(campoY);          
+
+           document.getElementById("campoResultado").value = campoResultado;
+        }    
+    </script>
+    <form>
+        <input type="text" id="campoX"> +
+        <input type="text" id="campoY"> =
+        <input type="text" id="campoResultado">
+        <input type="button" value="Somar campos" onclick="somarCampos();">
+    </form>
+
+    <script>
+        function trocarTextoPassarCursor(){
+            document.getElementById("meuSegundoParagrafo").innerHTML = "Novo texto =D";
+        }
+
+        function voltarTextoPassarCursor(){
+            document.getElementById("meuSegundoParagrafo").innerHTML = "Este é o texto original.";
+        }
+    </script>
+    <p id="meuSegundoParagrafo" onMouseOver="trocarTextoPassarCursor();" onMouseOut="voltarTextoPassarCursor();"
+    >Este texto é original.</p>
+   
+    <input type="button" value="Comando ALERT" onclick="alert('Oi!');">
+
+    <script>
+        function comandoConfirm(){
+            var decisao = confirm("Deseja mesmo executar tal operação?");
+
+            if(decisao){
+                alert('Operação será realizada!')
+            }
+            else{
+                alert('Operação abortada!');
+            }
+        }
+    </script>
+    <input type="button" value="Comando CONFIRM" onclick="comandoConfirm();">
+
+    <script>
+        function comandoPrompt(){
+            var nome = prompt("Digite o seu nome: ");
+
+            alert("Olá " + nome);
+        }
+    </script>
+    <input type="button" value="Comando Prompt" onclick="comandoPrompt();">
+
+
+</body>
+</html>
